@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F25C4F081E09352000714AF6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25C4F071E09352000714AF6 /* Constants.swift */; };
+		F25C4F0A1E0937C100714AF6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25C4F091E0937C100714AF6 /* Utils.swift */; };
 		F277318A1E03D28200C7E0B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27731891E03D28200C7E0B1 /* AppDelegate.swift */; };
-		F277318C1E03D28200C7E0B1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277318B1E03D28200C7E0B1 /* FirstViewController.swift */; };
+		F277318C1E03D28200C7E0B1 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277318B1E03D28200C7E0B1 /* CurrentLocationViewController.swift */; };
 		F277318E1E03D28200C7E0B1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277318D1E03D28200C7E0B1 /* SecondViewController.swift */; };
 		F27731911E03D28200C7E0B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F277318F1E03D28200C7E0B1 /* Main.storyboard */; };
 		F27731931E03D28300C7E0B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27731921E03D28300C7E0B1 /* Assets.xcassets */; };
 		F27731961E03D28300C7E0B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F27731941E03D28300C7E0B1 /* LaunchScreen.storyboard */; };
+		F277319E1E08EA7D00C7E0B1 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277319D1E08EA7D00C7E0B1 /* LocationDetailsViewController.swift */; };
+		F2BF18B21E0A32A100EA6B97 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF18B11E0A32A100EA6B97 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F25C4F071E09352000714AF6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F25C4F091E0937C100714AF6 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F27731861E03D28200C7E0B1 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27731891E03D28200C7E0B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F277318B1E03D28200C7E0B1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F277318B1E03D28200C7E0B1 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CurrentLocationViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F277318D1E03D28200C7E0B1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F27731901E03D28200C7E0B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F27731921E03D28300C7E0B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F27731951E03D28300C7E0B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F27731971E03D28300C7E0B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F277319D1E08EA7D00C7E0B1 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		F2BF18B11E0A32A100EA6B97 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +65,16 @@
 			isa = PBXGroup;
 			children = (
 				F27731891E03D28200C7E0B1 /* AppDelegate.swift */,
-				F277318B1E03D28200C7E0B1 /* FirstViewController.swift */,
+				F277318B1E03D28200C7E0B1 /* CurrentLocationViewController.swift */,
 				F277318D1E03D28200C7E0B1 /* SecondViewController.swift */,
 				F277318F1E03D28200C7E0B1 /* Main.storyboard */,
 				F27731921E03D28300C7E0B1 /* Assets.xcassets */,
 				F27731941E03D28300C7E0B1 /* LaunchScreen.storyboard */,
 				F27731971E03D28300C7E0B1 /* Info.plist */,
+				F277319D1E08EA7D00C7E0B1 /* LocationDetailsViewController.swift */,
+				F25C4F071E09352000714AF6 /* Constants.swift */,
+				F25C4F091E0937C100714AF6 /* Utils.swift */,
+				F2BF18B11E0A32A100EA6B97 /* CategoryPickerViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -94,7 +106,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Chaofan Zhang";
 				TargetAttributes = {
 					F27731851E03D28200C7E0B1 = {
@@ -139,9 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25C4F081E09352000714AF6 /* Constants.swift in Sources */,
+				F277319E1E08EA7D00C7E0B1 /* LocationDetailsViewController.swift in Sources */,
 				F277318E1E03D28200C7E0B1 /* SecondViewController.swift in Sources */,
 				F277318A1E03D28200C7E0B1 /* AppDelegate.swift in Sources */,
-				F277318C1E03D28200C7E0B1 /* FirstViewController.swift in Sources */,
+				F277318C1E03D28200C7E0B1 /* CurrentLocationViewController.swift in Sources */,
+				F2BF18B21E0A32A100EA6B97 /* CategoryPickerViewController.swift in Sources */,
+				F25C4F0A1E0937C100714AF6 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +201,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -234,6 +251,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -301,6 +319,7 @@
 				F277319C1E03D28300C7E0B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
