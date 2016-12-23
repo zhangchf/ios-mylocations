@@ -29,11 +29,13 @@ class LocationDetailsViewController: UITableViewController {
     var placemark: CLPlacemark?
     
     var categoryName = Constants.categories[0]
+    var date = Date()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initLocationDetails()
+        print("date: \(date)")
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_:)))
         gestureRecognizer.cancelsTouchesInView = false
@@ -55,7 +57,32 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        saveAndClose() {
+            print("date: \(date)")
+            
+            let hudView = HudView.hud(inView: navigationController!.view, animated: true)
+            hudView.text = "Tagged"
+            
+            afterDelay(0.6) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func saveAndClose(with closeAction: () -> ()) {
+        let location = Location(context: gManagedObjectContext)
+        location.locationDescription = descriptionTextView.text
+        location.category = categoryName
+        location.latitude = coordinate.latitude
+        location.longitude = coordinate.longitude
+        location.date = date
+        location.placemark = placemark
+        do {
+            try gManagedObjectContext.save()
+            closeAction()
+        } catch {
+            fatalCoreDataError(error)
+        }
     }
 
     @IBAction func cancel(_ sender: Any) {
@@ -75,7 +102,7 @@ class LocationDetailsViewController: UITableViewController {
             addressLabel.text = "No Address Found"
         }
         
-        dateLabel.text = dateFormatter.string(from: Date())
+        dateLabel.text = string(fromDate: date)
     }
     
     func string(from placemark: CLPlacemark) -> String {
@@ -97,6 +124,10 @@ class LocationDetailsViewController: UITableViewController {
             text += s
         }
         return text
+    }
+    
+    func string(fromDate date: Date) -> String {
+        return dateFormatter.string(from: date)
     }
     
     // MARK: - UITableView Delegate

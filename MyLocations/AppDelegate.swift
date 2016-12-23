@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+//    let managedObjectContext = gManagedObjectContext
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print("appDocumentsDirectory: \(gApplicationDocumentsDirectory)")
+        print("applibraryDirectory: \(gAppLibraryDirectory)")
+        
+        listenForFatalCoreDataNotifications()
+        
         return true
     }
 
@@ -40,7 +47,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    // Private functions
+    func listenForFatalCoreDataNotifications() {
+        NotificationCenter.default.addObserver(forName: gManagedObjectContextSaveDidFailNotificationName, object: nil, queue: OperationQueue.main, using: { notification in
+            let alert = UIAlertController(title: "Internal Error", message:
+                "There was a fatal error in the app and it cannot continue. \n\n"
+                + "Press OK to terminate the app. Sorry for the inconvenience.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                let exception = NSException(name: .internalInconsistencyException, reason: "Fatal Core Data Error", userInfo: nil)
+                exception.raise()
+            })
+            alert.addAction(alertAction)
+            
+            self.topViewController().present(alert, animated: true, completion: nil)
+            
+            
+        })
+    }
+    
+    func topViewController() -> UIViewController {
+        let rootViewController = window!.rootViewController!
+        if let topViewController = rootViewController.presentedViewController {
+            return topViewController
+        } else {
+            return rootViewController
+        }
+    }
 
 }
 
