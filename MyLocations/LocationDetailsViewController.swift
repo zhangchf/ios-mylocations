@@ -25,9 +25,21 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var locationToEdit: Location? {
+        didSet {
+            if let location = locationToEdit {
+                descriptionText = location.locationDescription
+                categoryName = location.category
+                coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                placemark = location.placemark
+                date = location.date
+            }
+        }
+    }
+    
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
-    
+    var descriptionText = ""
     var categoryName = Constants.categories[0]
     var date = Date()
     
@@ -41,6 +53,27 @@ class LocationDetailsViewController: UITableViewController {
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
     }
+    
+    func initLocationDetails() {
+        if locationToEdit != nil {
+            title = "Edit Location"
+        }
+        
+        descriptionTextView.text = descriptionText
+        categoryLabel.text = categoryName
+        
+        latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
+        longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
+        
+        if let placemark = placemark {
+            addressLabel.text = string(from: placemark)
+        } else {
+            addressLabel.text = "No Address Found"
+        }
+        
+        dateLabel.text = string(fromDate: date)
+    }
+
     
     func hideKeyboard(_ gestureRecognizer: UITapGestureRecognizer) {
         let location = gestureRecognizer.location(in: tableView)
@@ -61,7 +94,11 @@ class LocationDetailsViewController: UITableViewController {
             print("date: \(date)")
             
             let hudView = HudView.hud(inView: navigationController!.view, animated: true)
-            hudView.text = "Tagged"
+            if locationToEdit != nil {
+                hudView.text = "Updated"
+            } else {
+                hudView.text = "Tagged"
+            }
             
             afterDelay(0.6) {
                 self.dismiss(animated: true, completion: nil)
@@ -70,7 +107,12 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     func saveAndClose(with closeAction: () -> ()) {
-        let location = Location(context: gManagedObjectContext)
+        let location: Location
+        if locationToEdit != nil {
+            location = locationToEdit!
+        } else {
+            location = Location(context: gManagedObjectContext)
+        }
         location.locationDescription = descriptionTextView.text
         location.category = categoryName
         location.latitude = coordinate.latitude
@@ -87,22 +129,6 @@ class LocationDetailsViewController: UITableViewController {
 
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    func initLocationDetails() {
-        descriptionTextView.text = ""
-        categoryLabel.text = categoryName
-        
-        latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
-        longitudeLabel.text = String(format: "%.8f", coordinate.longitude)
-        
-        if let placemark = placemark {
-            addressLabel.text = string(from: placemark)
-        } else {
-            addressLabel.text = "No Address Found"
-        }
-        
-        dateLabel.text = string(fromDate: date)
     }
     
     func string(from placemark: CLPlacemark) -> String {
