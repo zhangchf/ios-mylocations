@@ -13,6 +13,7 @@ class Constants {
     static let SEGUE_ID_CATEGORY_PICKER = "categoryPicker"
     static let SEGUE_ID_DID_PICK_CATEGORY = "didPickCategory"
     static let SEGUE_ID_EDIT_LOCATION = "editLocation"
+    static let SEGUE_ID_EDIT_LOCATION_FROM_MAP = "editLocationFromMap"
     
     static let IDENTIFIER_CATEGORY_PICKER_TABLE_VIEW_CELL = "categoryPickerTableViewCell"
     static let IDENTIFIER_LOCATIONS_TABLE_VIEW_CELL = "locationCell"

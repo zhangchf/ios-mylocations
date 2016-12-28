@@ -78,6 +78,7 @@ class LocationsViewController: UITableViewController {
         if editingStyle == .delete {
             let location = fetchedResultsController.object(at: indexPath)
             gManagedObjectContext.delete(location)
+            location.removePhotoFile()
             
             do {
                 try gManagedObjectContext.save()
