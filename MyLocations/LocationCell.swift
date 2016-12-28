@@ -38,15 +38,9 @@ class LocationCell: UITableViewCell {
         
         var addressText = ""
         if let placemark = location.placemark {
-            if let subThoroughfare = placemark.subThoroughfare {
-                addressText += subThoroughfare + " "
-            }
-            if let thoroughfare = placemark.thoroughfare {
-                addressText += thoroughfare + ","
-            }
-            if let locality = placemark.locality {
-                addressText += locality
-            }
+            addressText.add(text: placemark.subThoroughfare)
+            addressText.add(text: placemark.thoroughfare, separatedBy: " ")
+            addressText.add(text: placemark.locality, separatedBy: ",")
         } else {
             addressText = String(format: "Lat: %.8f, Long: %.8f", location.latitude, location.longitude)
         }

@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         print("appDocumentsDirectory: \(gApplicationDocumentsDirectory)")
         print("applibraryDirectory: \(gAppLibraryDirectory)")
+        customizeAppearance()
         
         listenForFatalCoreDataNotifications()
         
@@ -73,6 +74,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             return rootViewController
         }
+    }
+    
+    func customizeAppearance() {
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    
+        UITabBar.appearance().barTintColor = UIColor.black
+        UITabBar.appearance().tintColor = UIColor(red: 255/255.0, green: 238/255.0, blue: 136/255.0, alpha: 1.0)
     }
 
 }

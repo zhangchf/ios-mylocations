@@ -11,7 +11,6 @@
 		F25C4F0A1E0937C100714AF6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25C4F091E0937C100714AF6 /* Utils.swift */; };
 		F277318A1E03D28200C7E0B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27731891E03D28200C7E0B1 /* AppDelegate.swift */; };
 		F277318C1E03D28200C7E0B1 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277318B1E03D28200C7E0B1 /* CurrentLocationViewController.swift */; };
-		F277318E1E03D28200C7E0B1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F277318D1E03D28200C7E0B1 /* SecondViewController.swift */; };
 		F27731911E03D28200C7E0B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F277318F1E03D28200C7E0B1 /* Main.storyboard */; };
 		F27731931E03D28300C7E0B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27731921E03D28300C7E0B1 /* Assets.xcassets */; };
 		F27731961E03D28300C7E0B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F27731941E03D28300C7E0B1 /* LaunchScreen.storyboard */; };
@@ -23,6 +22,7 @@
 		F293C31D1E1113F1003241D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293C31C1E1113F1003241D7 /* MapKit.framework */; };
 		F293C31F1E111814003241D7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F293C31E1E111814003241D7 /* MapViewController.swift */; };
 		F2942F9A1E136CD500E3EDB3 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2942F991E136CD500E3EDB3 /* UIImage+Resize.swift */; };
+		F2942F9C1E13821300E3EDB3 /* String+AddText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2942F9B1E13821300E3EDB3 /* String+AddText.swift */; };
 		F2BF18B21E0A32A100EA6B97 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF18B11E0A32A100EA6B97 /* CategoryPickerViewController.swift */; };
 		F2BF18B41E0A6FEF00EA6B97 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF18B31E0A6FEF00EA6B97 /* HudView.swift */; };
 		F2BF18B61E0A88E100EA6B97 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF18B51E0A88E100EA6B97 /* Functions.swift */; };
@@ -35,7 +35,6 @@
 		F27731861E03D28200C7E0B1 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27731891E03D28200C7E0B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F277318B1E03D28200C7E0B1 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CurrentLocationViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		F277318D1E03D28200C7E0B1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F27731901E03D28200C7E0B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F27731921E03D28300C7E0B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F27731951E03D28300C7E0B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		F293C31C1E1113F1003241D7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F293C31E1E111814003241D7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F2942F991E136CD500E3EDB3 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		F2942F9B1E13821300E3EDB3 /* String+AddText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AddText.swift"; sourceTree = "<group>"; };
 		F2BF18B11E0A32A100EA6B97 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		F2BF18B31E0A6FEF00EA6B97 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		F2BF18B51E0A88E100EA6B97 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -101,11 +101,11 @@
 				F277319D1E08EA7D00C7E0B1 /* LocationDetailsViewController.swift */,
 				F293C3171E10BB29003241D7 /* LocationsViewController.swift */,
 				F277318F1E03D28200C7E0B1 /* Main.storyboard */,
-				F277318D1E03D28200C7E0B1 /* SecondViewController.swift */,
 				F25C4F091E0937C100714AF6 /* Utils.swift */,
 				F293C3191E10CD24003241D7 /* LocationCell.swift */,
 				F293C31E1E111814003241D7 /* MapViewController.swift */,
 				F2942F991E136CD500E3EDB3 /* UIImage+Resize.swift */,
+				F2942F9B1E13821300E3EDB3 /* String+AddText.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -198,9 +198,9 @@
 				F25C4F081E09352000714AF6 /* Constants.swift in Sources */,
 				F2BF18B91E0B85FD00EA6B97 /* DataModel.xcdatamodeld in Sources */,
 				F277319E1E08EA7D00C7E0B1 /* LocationDetailsViewController.swift in Sources */,
+				F2942F9C1E13821300E3EDB3 /* String+AddText.swift in Sources */,
 				F2BF18B61E0A88E100EA6B97 /* Functions.swift in Sources */,
 				F293C31A1E10CD24003241D7 /* LocationCell.swift in Sources */,
-				F277318E1E03D28200C7E0B1 /* SecondViewController.swift in Sources */,
 				F277318A1E03D28200C7E0B1 /* AppDelegate.swift in Sources */,
 				F2BF18B41E0A6FEF00EA6B97 /* HudView.swift in Sources */,
 				F277318C1E03D28200C7E0B1 /* CurrentLocationViewController.swift in Sources */,
