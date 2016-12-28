@@ -257,7 +257,8 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
     
     func takePhotoWithCamera() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
+        imagePicker.view.tintColor = view.tintColor
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -265,7 +266,8 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
     
     func choosePhotoFromLibrary() {
-        let imagePicker = UIImagePickerController()
+        let imagePicker = MyImagePickerController()
+        imagePicker.view.tintColor = view.tintColor
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
